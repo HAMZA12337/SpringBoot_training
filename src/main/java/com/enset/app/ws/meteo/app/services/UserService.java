@@ -1,5 +1,20 @@
 package com.enset.app.ws.meteo.app.services;
 
-public class UserService {
+import com.enset.app.ws.meteo.app.shared.dto.UserDto;
 
+public interface UserService {
+
+    UserDto  createUser(UserDto userDto);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
