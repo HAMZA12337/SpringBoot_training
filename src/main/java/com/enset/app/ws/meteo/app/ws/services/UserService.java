@@ -1,6 +1,8 @@
-package com.enset.app.ws.meteo.app.services;
+package com.enset.app.ws.meteo.app.ws.services;
 
-import com.enset.app.ws.meteo.app.shared.dto.UserDto;
+import java.util.List;
+
+import com.enset.app.ws.meteo.app.ws.dto.UserDto;
 
 public interface UserService {
 

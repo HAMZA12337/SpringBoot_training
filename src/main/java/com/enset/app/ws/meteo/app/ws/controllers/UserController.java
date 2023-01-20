@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.enset.app.ws.meteo.app.services.UserService;
-import com.enset.app.ws.meteo.app.shared.dto.UserDto;
+import com.enset.app.ws.meteo.app.ws.services.UserService;
+import com.enset.app.ws.meteo.app.ws.dto.UserDto;
 import com.enset.app.ws.meteo.app.ws.requests.UserRequest;
 import com.enset.app.ws.meteo.app.ws.responses.UserResponse;
 
@@ -26,7 +26,7 @@ public class UserController {
 	UserService userService ;
 	
 	@GetMapping
-	public String getUser() {
+	public String getUsers() {
 		
 	return "get user was called " ;}
 	

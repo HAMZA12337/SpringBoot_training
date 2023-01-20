@@ -1,4 +1,4 @@
-package com.enset.app.ws.meteo.app.shared.dto;
+package com.enset.app.ws.meteo.app.ws.dto;
 
 import java.io.Serializable;
 
@@ -7,6 +7,11 @@ public class UserDto implements Serializable  {
 	/**
 	 * 
 	 */
+	
+	// It needs to be serializable to go across the connection.
+	// Data Transfer Object (DTO)
+	// Java class used to defined getter and setter to specific data
+	
 	private static final long serialVersionUID = 1L;
 	private long id;
 	private String userId;
