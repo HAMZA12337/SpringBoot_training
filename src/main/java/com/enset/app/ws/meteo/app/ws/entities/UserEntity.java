@@ -10,6 +10,8 @@ import jakarta.persistence.Id;
 @Entity(name="users")
 public class UserEntity implements Serializable {
 
+	
+	
 	/**
 	 * 
 	 */

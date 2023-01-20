@@ -10,6 +10,7 @@ import com.enset.app.ws.meteo.app.ws.dto.UserDto;
 import com.enset.app.ws.meteo.app.ws.entities.UserEntity;
 import com.enset.app.ws.meteo.app.ws.repositories.UserRepository;
 import com.enset.app.ws.meteo.app.ws.services.UserService;
+import com.enset.app.ws.meteo.app.ws.shared.Utils;
 
 
 
@@ -19,6 +20,8 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	UserRepository userRepositroy;
 	
+	@Autowired
+	Utils utils;
 
 	@Override
 	public UserDto createUser(UserDto user) {
@@ -30,7 +33,7 @@ public class UserServiceImpl implements UserService{
 		UserEntity userEntity = new UserEntity();
 				BeanUtils.copyProperties(user, userEntity);
 				
-				
+				userEntity.setUserId(utils.generateIdUser(30));
 				userEntity.setEncryptedPassword("dddd");
 				userEntity.setUserId("ddd");
 				
