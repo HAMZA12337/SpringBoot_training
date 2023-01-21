@@ -4,6 +4,7 @@ package com.enset.app.ws.meteo.app.ws.services.impl;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.enset.app.ws.meteo.app.ws.dto.UserDto;
@@ -22,6 +23,9 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	Utils utils;
+	
+	@Autowired
+	BCryptPasswordEncoder bcryprPasswordEncoder ;
 
 	@Override
 	public UserDto createUser(UserDto user) {
@@ -34,8 +38,8 @@ public class UserServiceImpl implements UserService{
 				BeanUtils.copyProperties(user, userEntity);
 				
 				userEntity.setUserId(utils.generateIdUser(30));
-				userEntity.setEncryptedPassword("dddd");
-				userEntity.setUserId("ddd");
+				userEntity.setEncryptedPassword(bcryprPasswordEncoder.encode(user.getPassword()));
+				
 				
 				UserEntity newUser=userRepositroy.save(userEntity);
 				UserDto userDto = new UserDto();
